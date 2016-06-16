@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hello.mymap">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.mapbox.mapboxsdk.telemetry.TelemetryService" />
+
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegistActivity" />
+        <activity android:name=".activity.VideoCallActivity" />
+        <activity android:name=".activity.VoiceCallActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.ChatActivity" />
+        <activity android:name=".activity.UserProfileActivity" />
+        <activity android:name=".activity.ChatRoomDetailsActivity" />
+        <activity android:name=".activity.GroupDetailsActivity" />
+        <activity android:name=".activity.ForwardMessageActivity" />
+        <activity android:name=".activity.RecorderVideoActivity" />
+        <activity android:name=".activity.GroupsActivity" />
+        <activity android:name=".activity.ImageGridActivity" />
+        <activity android:name=".ar.ArActivity" />
+        <activity android:name=".ar.ArCreatActivity" />
+        <activity android:name=".map.acyivity.BigPicActivity" />
+        <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
+        <activity android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity" />
+        <activity android:name=".map.acyivity.PLVideoViewActivity" />
+        <activity android:name=".map.acyivity.PlaceInfo"/>
+
+        <!-- 设置环信应用的appkey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="hellopyj#mymap" />
+        <!-- 声明sdk所需的service -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <!-- 声明sdk所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <!--
+        百度定位
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="GNPYiQ12ptkAaC9W5TCQwVzqtP1lb3fT" />
+        -->
+        <!-- 声明sdk所需的service -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <!-- 声明sdk所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.TestActivity" />
+        <activity android:name=".map.acyivity.BigPicActivity" />
+        <activity android:name=".ar.ArCreatActivity" />
+        <activity android:name=".map.acyivity.PlaceInfo"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RegistActivity"
+    android:background="@mipmap/regist_bg"
+    >
+    <LinearLayout
+        android:layout_marginTop="150dp"
+        android:id="@+id/ll_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:id="@+id/et_nick"
+                android:paddingLeft="@dimen/activity_login_tv_lr"
+                android:paddingRight="@dimen/activity_login_tv_lr"
+                android:paddingTop="@dimen/activity_login_tv_tb"
+                android:paddingBottom="@dimen/activity_login_tv_tb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="昵称"
+                android:textColor ="#ff1d1d1d"
+                android:textColorHint ="#ff666666"
+                android:textSize="@dimen/activity_login_tv_size"
+                android:background="@null"
+                android:textCursorDrawable="@drawable/cursor_line"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@android:color/darker_gray" />
+        <EditText
+            android:id="@+id/et_email"
+            android:paddingLeft="@dimen/activity_login_tv_lr"
+            android:paddingRight="@dimen/activity_login_tv_lr"
+            android:paddingTop="@dimen/activity_login_tv_tb"
+            android:paddingBottom="@dimen/activity_login_tv_tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="手机号"
+            android:textColor ="#ff1d1d1d"
+            android:textColorHint ="#ff666666"
+            android:textSize="@dimen/activity_login_tv_size"
+            android:background="@null"
+            android:textCursorDrawable="@drawable/cursor_line"
+            />
+        <View
+
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@android:color/darker_gray" />
+        <EditText
+            android:id="@+id/et_password"
+            android:paddingLeft="@dimen/activity_login_tv_lr"
+            android:paddingRight="@dimen/activity_login_tv_lr"
+            android:paddingTop="@dimen/activity_login_tv_tb"
+            android:paddingBottom="@dimen/activity_login_tv_tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="密码"
+            android:textColor ="#ff1d1d1d"
+            android:textColorHint ="#ff666666"
+            android:textSize="@dimen/activity_login_tv_size"
+            android:background="@null"
+            android:textCursorDrawable="@drawable/cursor_line"
+            />
+        <View
+
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@android:color/darker_gray" />
+        <EditText
+            android:id="@+id/et_repassword"
+            android:paddingLeft="@dimen/activity_login_tv_lr"
+            android:paddingRight="@dimen/activity_login_tv_lr"
+            android:paddingTop="@dimen/activity_login_tv_tb"
+            android:paddingBottom="@dimen/activity_login_tv_tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="重复密码"
+            android:textColor ="#ff1d1d1d"
+            android:textColorHint ="#ff666666"
+            android:textSize="@dimen/activity_login_tv_size"
+            android:background="@null"
+            android:textCursorDrawable="@drawable/cursor_line"
+            />
+    </LinearLayout>
+    <Button
+        android:layout_below="@id/ll_account"
+        android:id="@+id/bt_rester"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="@string/activity_regist_bt"
+        android:textSize="20dp"
+        android:background="@drawable/bt_login_bg"
+        android:textColor="#ffffff"
+        android:onClick="register"
+        />
+
+</RelativeLayout>

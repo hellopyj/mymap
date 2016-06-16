@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">我的地图</string>
+    <string name="menu_search">搜索</string>
+    <string name="navigation_drawer_open">打开侧边栏</string>
+    <string name="navigation_drawer_close">关闭侧边栏</string>
+    <string name="activity_main_btns_1">对点操作</string>
+    <string name="activity_main_btns_2">路线</string>
+    <string name="activity_main_btns_3">区域面</string>
+    <string name="activity_main_btns_4">修改地图</string>
+    <string name="activity_main_btns_5">查看及分享</string>
+    <string name="activity_login_bt">登入</string>
+    <string name="activity_regist_bt">注册</string>
+    <string name="accessToken">pk.eyJ1IjoiaGVsbG9weWoiLCJhIjoiY2lsMmlkZ2RvM2NmY3U0bTNrZWkyN2gwbyJ9.EI6Ck4UhDudR2kxNyuD-7w</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyMap</string>
+    <string name="menu_search">Search</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="activity_main_btns_1">Edit a point</string>
+    <string name="activity_main_btns_4">Update maps</string>
+    <string name="activity_main_btns_2">Edit line</string>
+    <string name="activity_main_btns_3">Make layer</string>
+    <string name="activity_main_btns_5">Share some things</string>
+    <string name="activity_splash_tip">img/mymap</string>
+    <string name="activity_login_bt">Login</string>
+    <string name="activity_regist_bt">Regist</string>
+    <string name="accessToken">pk.eyJ1IjoiaGVsbG9weWoiLCJhIjoiY2lsMmlkZ2RvM2NmY3U0bTNrZWkyN2gwbyJ9.EI6Ck4UhDudR2kxNyuD-7w</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/marker_bg"
+    android:padding="5dp"
+    android:gravity="center">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_marginBottom="10dp"
+    >
+    <LinearLayout
+        android:id="@+id/ll_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Every~"
+            android:textSize="12dp"
+            />
+        <Button
+            android:id="@+id/bt_voice"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/mark_voice_bg"
+            android:layout_margin="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sala~~"
+            android:textSize="12dp"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello pyj"
+        android:layout_below="@+id/ll_voice"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        />
+    <LinearLayout
+        android:id="@+id/ll_question"
+        android:layout_below="@id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+android:visibility="gone"
+        >
+        <EditText
+            android:textColor="#34495e"
+            android:singleLine="true"
+            android:layout_width="150dp"
+            android:background="@drawable/marker_question_edbg"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_marginLeft="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/marker_question_bt"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
+</LinearLayout>

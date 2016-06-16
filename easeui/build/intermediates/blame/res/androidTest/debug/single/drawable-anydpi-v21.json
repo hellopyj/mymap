@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-anydpi-v21\\ic_add_circle_outline_black_36px.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-anydpi-v21\\ic_add_circle_outline_black_36px.xml"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-anydpi-v21\\ic_send_black_36px.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-anydpi-v21\\ic_send_black_36px.xml"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-anydpi-v21\\ic_keyboard_black_24dp.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-anydpi-v21\\ic_keyboard_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-anydpi-v21\\ic_format_align_left_black_24dp.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-anydpi-v21\\ic_format_align_left_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-anydpi-v21\\ic_insert_emoticon_black_36px.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-anydpi-v21\\ic_insert_emoticon_black_36px.xml"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-anydpi-v21\\ic_mic_none_black_24dp.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-anydpi-v21\\ic_mic_none_black_24dp.xml"
+    }
+]

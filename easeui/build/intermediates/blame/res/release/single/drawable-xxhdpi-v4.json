@@ -1,0 +1,234 @@
+[
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_file_pressed.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_file_pressed.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_btn_rating_star_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_gallery_pressed.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_gallery_pressed.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_location.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_location.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_video.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_video.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_file.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_file.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_camera_pressed.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_camera_pressed.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_location_pressed.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_location_pressed.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_keyboard_black_24dp.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_keyboard_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ease_msg_state_fail_resend_pressed.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ease_msg_state_fail_resend_pressed.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_msg_in_selected.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_msg_in_selected.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_format_align_left_black_24dp.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_format_align_left_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_msg_check_w.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_msg_check_w.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_audio_pressed.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_audio_pressed.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_ic_search_api_mtrl_alpha.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_insert_emoticon_black_36px.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_insert_emoticon_black_36px.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_add_circle_outline_black_36px.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_add_circle_outline_black_36px.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_send_black_36px.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_send_black_36px.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_msg_in.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_msg_in.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_mic_none_black_24dp.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_mic_none_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_msg_out_selected.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_msg_out_selected.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_video_pressed.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_video_pressed.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_audio.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_audio.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_msg_out.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_msg_out.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_camera.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_camera.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ic_attach_gallery.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ic_attach_gallery.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4\\ease_msg_state_fail_resend.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xxhdpi\\ease_msg_state_fail_resend.png"
+    }
+]
