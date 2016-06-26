@@ -6,6 +6,7 @@ import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,9 +16,11 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.bluelinelabs.logansquare.LoganSquare;
@@ -33,16 +36,21 @@ import com.example.hello.mymap.map.adapter.MyMarkerAdapter;
 import com.example.hello.mymap.map.markers.MyBaseMarker;
 import com.example.hello.mymap.map.markers.MyMarkerOption;
 import com.example.hello.mymap.map.modle.MyMessage;
+import com.example.hello.mymap.map.modle.MyPolyLine;
 import com.example.hello.mymap.map.others.MarkerVoiceClick;
 import com.example.hello.mymap.map.others.onMarkerClick;
 import com.example.hello.mymap.map.widget.MapInptBar;
+import com.example.hello.mymap.map.widget.MapPopuLineWindow;
 import com.example.hello.mymap.map.widget.MapPopuWindow;
 import com.example.hello.mymap.tools.FileDownloadCallback;
 import com.example.hello.mymap.tools.FileDownloadTask;
 import com.example.hello.mymap.tools.FileUploadThread;
 import com.example.hello.mymap.tools.Geocoder;
+import com.example.hello.mymap.tools.MyPolyline;
 import com.example.hello.mymap.tools.MyTools;
 import com.example.hello.mymap.utils.Config;
+import com.google.vr.sdk.widgets.common.VrWidgetRenderer;
+import com.google.vr.sdk.widgets.pano.VrPanoramaView;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.domain.EaseEmojicon;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
@@ -51,6 +59,10 @@ import com.hyphenate.util.PathUtil;
 import com.lzp.floatingactionbuttonplus.FabTagLayout;
 import com.lzp.floatingactionbuttonplus.FloatingActionButtonPlus;
 import com.mapbox.mapboxsdk.annotations.Marker;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.annotations.PolygonOptions;
+import com.mapbox.mapboxsdk.annotations.Polyline;
+import com.mapbox.mapboxsdk.annotations.PolylineOptions;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.constants.Style;
@@ -66,7 +78,10 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -84,20 +99,29 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     protected static final int REQUEST_CODE_LOCAL = 3;
     protected static final int REQUEST_CODE_VIDEO=4;
     protected static final int REQUEST_CODE_AR=5;
+    boolean isMenuShow=false;
     private ProgressDialog pd;
     MapView mMapView;
-    FloatingActionButtonPlus fbPlus;
+    boolean canTouch=true;
+    //FloatingActionButtonPlus fbPlus;
     int currEditMod=-1;
-    Marker tmpMarker=null;
+    int pointTmpMarktype;
+    Marker pointTmpMark=null;
+
+    //int lineTmpMarkIndex=0;
+    //Marker lineTmpMark[]=new Marker[2];
+    LinkedList<Marker> lineTmpMark=new LinkedList<>();
+
     MapPopuWindow mapPopuWindow;
     MyMessage myMessage=new MyMessage();
     MapboxMap mMapBoxMap;
     File cameraFile;
-    MapboxMap.OnMapLongClickListener mapLongClickListener;
-    MapboxMap.OnInfoWindowCloseListener onInfoWindowCloseListener;
+    //MapboxMap.OnMapLongClickListener mapLongClickListener;
+    //MapboxMap.OnInfoWindowCloseListener onInfoWindowCloseListener;
     public FloatingActionButtonPlus.OnItemClickListener fbonItemClickListener;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+       // setok();
         super.onCreateView(inflater, container, savedInstanceState);
         View view=inflater.inflate(R.layout.fragment_map,container,false);
         //fbPlus=(FloatingActionButtonPlus)view.findViewById(R.id.fb_plus);
@@ -113,7 +137,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mMapView.setAccessToken(MyApplication.getInstance().getmapToken());
         mMapView.onCreate(savedInstanceState);
         mMapView.getMapAsync(this);
-        setGps();
+        //setGps();
         return view;
     }
     @Override
@@ -202,42 +226,98 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mapboxMap.setInfoWindowAdapter(myMarkerAdapter);
         mapboxMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
+    //路线长按事件
+    void setMkLongPloyLine()
+    {
+        lineTmpMark=new LinkedList<>();
+        myMessage.type= MyMarkerAdapter.LINE_START;
+        mMapBoxMap.setOnMapLongClickListener(new MapboxMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(@NonNull LatLng latLng) {
+                if (pointTmpMark == null) {
+                    // Remove previous added marker
+//                    mMapBoxMap.removeAnnotation(pointTmpMark );
+//                    pointTmpMark  = null;
+                    pointTmpMark = mMapBoxMap.addMarker(new MyMarkerOption(new MyMessage(MyMarkerAdapter.MARKER_ADD, latLng.getLatitude(), latLng.getLongitude(), null, null)));
+                    mMapBoxMap.selectMarker(pointTmpMark);
+                } else {
+                    pointTmpMark.setPosition(latLng);
+                }
+            }
+        });
 
+    }
+    //点操作长按事件
+    void setMkLongPoint()
+    {
+        //myMessage.type= marktype;
+        //地图长按事件
+        if(pointTmpMark!=null){
+            mMapBoxMap.removeMarker(pointTmpMark);
+            pointTmpMark=null;
+        }
+        mMapBoxMap.setOnMapLongClickListener(
+        new MapboxMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(@NonNull LatLng latLng) {
+                if (pointTmpMark == null) {
+                    // Remove previous added marker
+//                    mMapBoxMap.removeAnnotation(pointTmpMark );
+//                    pointTmpMark  = null;
+                    pointTmpMark = mMapBoxMap.addMarker(new MyMarkerOption(new MyMessage(pointTmpMarktype, latLng.getLatitude(), latLng.getLongitude(), null, null)));
+                    mMapBoxMap.selectMarker(pointTmpMark);
+                } else {
+                    pointTmpMark.setPosition(latLng);
+                }
+            }
+        });
+                //infowindow关闭事件
+          mMapBoxMap.setOnInfoWindowCloseListener(new MapboxMap.OnInfoWindowCloseListener() {
+                    @Override
+                    public void onInfoWindowClose(Marker marker) {
+                        if (marker instanceof MyBaseMarker)
+                        {
+                            if(((MyBaseMarker) marker).getMessage()!=null) {
+                                //添加状态
+                                int type = ((MyBaseMarker) marker).getMessage().type;
+                                if (type == MyMarkerAdapter.MARKER_ADD || type == MyMarkerAdapter.LINE_START || type == MyMarkerAdapter.GON_STRAT) {
+                                    mMapBoxMap.removeMarker(marker);
+                                    pointTmpMark = null;
+                                }
+                            }
+                        }
+                        //Log.v("ss","close");
+                    }
+                });
+    }
     void setMkEvent()
     {
         mMapBoxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(@NonNull Marker marker) {
                // Log.v("nihaosijie","shakskamdhjkgdsjhsggj");
+                canTouch=false;
                 return false;
             }
         });
-
         //地图点击事件
         mMapBoxMap.setOnMapClickListener(new MapboxMap.OnMapClickListener() {
             @Override
             public void onMapClick(@NonNull LatLng point) {
-                Geocoder geocoder=new Geocoder(point,18);
-                geocoder.placeInfo();
+                if(canTouch) {
+                    Geocoder geocoder = new Geocoder(point, 18);
+                    geocoder.placeInfo();
+                }
+                else
+                {
+                    canTouch=true;
+                }
 
             }
         });
-//地图长按事件
-        mapLongClickListener=new MapboxMap.OnMapLongClickListener() {
-            @Override
-            public void onMapLongClick(@NonNull LatLng latLng) {
-                if (tmpMarker == null) {
-                    // Remove previous added marker
-//                    mMapBoxMap.removeAnnotation(tmpMarker );
-//                    tmpMarker  = null;
-                    tmpMarker  = mMapBoxMap.addMarker(new MyMarkerOption(new MyMessage(0,latLng.getLatitude(),latLng.getLongitude(),null,null)));
-                    mMapBoxMap.selectMarker(tmpMarker);
-                }
-                else {
-                    tmpMarker.setPosition(latLng);
-                }
+
 //                else {
-//                    ValueAnimator markerAnimator = ValueAnimator.ofObject(new LatLngEvaluator(), (Object[]) new LatLng[]{tmpMarker.getPosition(), latLng});
+//                    ValueAnimator markerAnimator = ValueAnimator.ofObject(new LatLngEvaluator(), (Object[]) new LatLng[]{pointTmpMark.getPosition(), latLng});
 //                    markerAnimator.setDuration(1000);
 //                    //markerAnimator.setRepeatCount(ValueAnimator.RESTART);
 //                    //markerAnimator.setRepeatMode(ValueAnimator.INFINITE);
@@ -245,8 +325,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 //                    markerAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 //                        @Override
 //                        public void onAnimationUpdate(ValueAnimator animation) {
-//                            if (tmpMarker!= null) {
-//                                tmpMarker.setPosition((LatLng) animation.getAnimatedValue());
+//                            if (pointTmpMark!= null) {
+//                                pointTmpMark.setPosition((LatLng) animation.getAnimatedValue());
 //                            }
 //                        }
 //                    });
@@ -255,24 +335,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
                 // Add marker on long click location with default marker image
 
-            }
-        };
-        //infowindow关闭事件
-        onInfoWindowCloseListener=new MapboxMap.OnInfoWindowCloseListener() {
-            @Override
-            public void onInfoWindowClose(Marker marker) {
-                if (marker instanceof MyBaseMarker)
-                {
-                    //添加状态
-                    if(((MyBaseMarker) marker).getMessage().type==0)
-                    {
-                        mMapBoxMap.removeMarker(marker);
-                        tmpMarker=null;
-                    }
-                }
-
-            }
-        };
     }
     void setFbClick()
     {
@@ -280,9 +342,45 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onItemClick(FabTagLayout tagView, int position) {
                 if(position==4&&currEditMod!=4) {
-                    mMapBoxMap.setOnMapLongClickListener(mapLongClickListener);
-                    mMapBoxMap.setOnInfoWindowCloseListener(onInfoWindowCloseListener);
+                    removeListMark(lineTmpMark);
+                    pointTmpMarktype=MyMarkerAdapter.MARKER_ADD;
+                    setMkLongPoint();
                     currEditMod=4;
+                }
+                if(position==3&&currEditMod!=3)
+                {
+                    //Log.v("ddd","dsds");
+                    MapPopuLineWindow mapPopuLineWindow=new MapPopuLineWindow(getActivity());
+                    mapPopuLineWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+                        @Override
+                        public void onDismiss() {
+                            currEditMod=-1;
+                        }
+                    });
+                    mapPopuLineWindow.showAtLocation(getActivity().findViewById(R.id.rl_main), Gravity.BOTTOM, 0, 0);
+                    mapPopuLineWindow.setPolyLineClick(new MapPopuLineWindow.PolyLineClick() {
+                        @Override
+                        public void onPolyLineClick(int tag) {
+                            switch (tag)
+                            {
+                                case 1:{
+                                    removeListMark(lineTmpMark);
+                                    pointTmpMarktype=MyMarkerAdapter.LINE_START;
+                                    setMkLongPoint();
+                                    Log.v("ployline","ployline");
+                                    break;
+                                }
+                            }
+                        }
+                    });
+                    currEditMod=3;
+                }
+                if(position==2&&currEditMod!=2) {
+                    removeListMark(lineTmpMark);
+                    setMkLongPoint();
+                    setok();
+                    pointTmpMarktype=MyMarkerAdapter.GON_STRAT;
+                    currEditMod=2;
                 }
             }
         };
@@ -310,9 +408,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == REQUEST_CODE_CAMERA) { // 发送照片
-               // myMessage=new MyMessage(MyMarkerAdapter.MARKER_PCICTURE,tmpMarker.getPosition())
+               // myMessage=new MyMessage(MyMarkerAdapter.MARKER_PCICTURE,pointTmpMark.getPosition())
                 myMessage.type=MyMarkerAdapter.MARKER_PCICTURE;
-                myMessage.content.clear();
+                myMessage.content=new HashMap<>();
                 myMessage.content.put("picurl",cameraFile.getAbsolutePath());
 
             } else if (requestCode == REQUEST_CODE_LOCAL) { // 发送本地图片
@@ -323,7 +421,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
             } else if (requestCode == REQUEST_CODE_AR) { // AR
                 myMessage.type=MyMarkerAdapter.MARKER_AR;
-                myMessage.content.clear();
+                myMessage.content=new HashMap<>();
                 myMessage.content.put("picurl",data.getStringExtra("picurl"));
                 myMessage.content.put("videourl",data.getStringExtra("videourl"));
                 //Log.v("video",data.getStringExtra("picurl"));
@@ -331,7 +429,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             else if(requestCode ==REQUEST_CODE_VIDEO)
             {
                 myMessage.type=MyMarkerAdapter.MARKER_VIDEO;
-                myMessage.content.clear();
+                myMessage.content=new HashMap<>();
                 myMessage.content.put("videourl", data.getStringExtra("path"));
             }
 
@@ -387,7 +485,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 @Override
                 public void onSendMessage(String content) {
                     //mMapBoxMap.addMarker(new MyMarkerOption().type());
-                    LatLng latLng=tmpMarker.getPosition();
+                    LatLng latLng=pointTmpMark.getPosition();
                     //myMessage=new MyMessage(chattype,latLng.getLatitude(),latLng.getLongitude(),null);
                     myMessage.latitude=latLng.getLatitude();
                     myMessage.longitude=latLng.getLongitude();
@@ -525,6 +623,81 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 new FileDownloadTask(voiceurl,localurl,fileDownloadCallback,false).execute();
             }
         }
+
+        @Override
+        public void markLineStart(MyBaseMarker marker) {
+
+            mMapBoxMap.removeMarker(pointTmpMark);
+            lineTmpMark.clear();
+            LatLng latLng=marker.getPosition();
+            lineTmpMark.add(mMapBoxMap.addMarker(new MarkerOptions().position(latLng).title("起点")));
+            //lineTmpMark.add(marker);
+           // Log.v("sas","hh");
+            //lineTmpMark.add(pointTmpMark);
+            pointTmpMark=null;
+            pointTmpMarktype=MyMarkerAdapter.LINE_END;
+            canTouch=true;
+        }
+
+        @Override
+        public void markLineEnd(MyBaseMarker marker) {
+            //Log.v("hh","end");
+            lineTmpMark.add(marker);
+           // removeListMark(lineTmpMark);
+            MyPolyline myPolyline=new MyPolyline(lineTmpMark.get(0).getPosition(),marker.getPosition());
+            myPolyline.setLinecomplete(new MyPolyline.LineComplete() {
+                @Override
+                public void complete(final MyMessage myMessage) {
+                    //removeListMark(lineTmpMark);
+                   // Log.v("ssa","sssss");
+                    AsyncRun.run(new Runnable() {
+                        @Override
+                        public void run() {
+                            removeListMark(lineTmpMark);
+                            pointTmpMarktype=MyMarkerAdapter.LINE_START;
+                            addNewPolyLine(new MyMarkerOption(myMessage));
+                            canTouch=true;
+                        }
+                    });
+                    //addNewPolyLine(new MyMarkerOption(myMessage));
+
+                }
+
+            });
+            myPolyline.lineInfo();
+        }
+
+        @Override
+        public void markGonStrat(MyBaseMarker marker, int i) {
+            if(i==0)
+            {
+                mMapBoxMap.removeMarker(marker);
+               // lineTmpMark.remove(marker);
+            }
+            else
+            {
+                mMapBoxMap.removeMarker(pointTmpMark);
+               // lineTmpMark.clear();
+                LatLng latLng=marker.getPosition();
+                lineTmpMark.add(mMapBoxMap.addMarker(new MarkerOptions().position(latLng).title("起点")));
+                //lineTmpMark.add(marker);
+                // Log.v("sas","hh");
+                //lineTmpMark.add(pointTmpMark);
+                pointTmpMark=null;
+                //setok();
+               // Log.v("size",lineTmpMark.size()+"");
+                if(lineTmpMark.size()==3)
+                {
+                    shownok();
+                }
+                else {
+                    if (lineTmpMark.size()<3)
+                    {
+                        unshownok();
+                    }
+                }
+            }
+        }
     }
     /**
      * 照相获取图片
@@ -577,7 +750,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }).create();
         alertDialog.show();
     }
-
+//发送消息到服务器
     void sendMyMessage()
     {
         new Thread(new Runnable() {
@@ -660,7 +833,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     }
                 });
                // addNewMark(new MyMarkerOption(myMessage));
-               // mMapBoxMap.removeMarker(tmpMarker);
+               // mMapBoxMap.removeMarker(pointTmpMark);
                // mapPopuWindow.dismiss();
                 break;
         }
@@ -697,7 +870,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     {
         pd.dismiss();
         addNewMark(new MyMarkerOption(myMessage));
-        mMapBoxMap.removeMarker(tmpMarker);
+        mMapBoxMap.removeMarker(pointTmpMark);
         mapPopuWindow.dismiss();
     }
     //添加marker
@@ -705,4 +878,106 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     {
         mMapBoxMap.addMarker(myMarkerOption);
     }
+    //添加polyline
+    public  void addNewPolyLine(MyMarkerOption  myMarkerOption)
+    {
+       MyBaseMarker tmp= (MyBaseMarker) mMapBoxMap.addMarker(myMarkerOption);
+        String shape=tmp.message.content.get("shape");
+        tmp.brother=new ArrayList<>();
+        LatLng tolat=new LatLng(Double.parseDouble(tmp.message.content.get("tolatitude")),Double.parseDouble(tmp.message.content.get("tolongitude")));
+        //double tolan=Double.parseDouble(tmp.message.content.get("tolatitude"));
+        //double tolon=Double.parseDouble(tmp.message.content.get("tolongitude"));
+       // Log.v("ss",tolan+";"+tolon);
+        tmp.brother.add(mMapBoxMap.addPolyline(new PolylineOptions().addAll(MyTools.decode(shape,tmp.getPosition(),tolat))
+                .color(Color.parseColor("#3887be"))
+                .width(5)
+        ));
+        //待修改
+        tmp.brother.add(mMapBoxMap.addMarker(new MyMarkerOption().position(tolat)));
+    }
+    //移除polyline
+    public void removePolyLine(MyBaseMarker myBaseMarker){
+        mMapBoxMap.removePolyline((Polyline)myBaseMarker.brother.get(0));
+        mMapBoxMap.removeMarker(myBaseMarker);
+    }
+    //添加polygon
+    public void addNewPolyGon()
+    {
+        if(lineTmpMark.size()>0)
+        {
+            List<LatLng> latLngs=new ArrayList<LatLng>();
+            for(Marker marker:lineTmpMark){
+                latLngs.add(marker.getPosition());
+            }
+            MyBaseMarker tmp= (MyBaseMarker) mMapBoxMap.addMarker(new MyMarkerOption().position(latLngs.get(0)));
+            tmp.brother=new ArrayList<>();
+            tmp.brother.add(mMapBoxMap.addPolygon(new PolygonOptions()
+                    .addAll(latLngs)
+                    .fillColor(Color.parseColor("#3bb2d0"))));
+        }
+    }
+    //移除listmark
+    public  void removeListMark(LinkedList<Marker> myBaseMarkers)
+    {
+        for(Marker key:myBaseMarkers){
+            mMapBoxMap.removeMarker(key);
+        }
+        myBaseMarkers.clear();
+        if(pointTmpMark!=null) {
+            mMapBoxMap.removeMarker(pointTmpMark);
+            pointTmpMark = null;
+        }
+    }
+    //显示ok按钮
+    public void setok()
+    {
+        if(!isMenuShow){
+            ((MainActivity)getActivity()).mysumenu.add(2,1,1,"完成").setIcon(R.drawable.ic_done_black_24dp).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem menuItem) {
+                    addNewPolyGon();
+                    removeListMark(lineTmpMark);
+                    unshownok();
+                    canTouch=true;
+                    return false;
+                }
+            });
+            ((MainActivity)getActivity()).mysumenu.add(2,1,1,"取消").setIcon(R.drawable.ic_close_black_24dp).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem menuItem) {
+                    removeListMark(lineTmpMark);
+                    unshownok();
+                    return false;
+                }
+            });
+            isMenuShow=true;
+        }
+       // ((MainActivity)getActivity()).mymenu.removeGroup(200);
+    }
+    public void shownok()
+    {
+         if(isMenuShow)
+             ((MainActivity)getActivity()).mysumenu.setGroupVisible(2,true);
+    }
+    public void unshownok()
+    {
+        if(isMenuShow) {
+            ((MainActivity) getActivity()).mysumenu.setGroupVisible(2, false);
+        }
+    }
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        //uLog.v("ddd",hidden?"true":"false");
+        if(hidden) {
+           unshownok();
+          //  isMenuShow=false;
+
+        }
+        else {
+            shownok();
+        }
+       // Log.v("sasa","hksj");
+        super.onHiddenChanged(hidden);
+    }
+
 }

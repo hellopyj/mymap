@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -87,7 +87,7 @@ apply plugin: 'com.neenbedankt.android-apt'
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile('com.mapbox.mapboxsdk:mapbox-android-sdk:4.0.1@aar') {
+    compile('com.mapbox.mapboxsdk:mapbox-android-sdk:4.1.0-beta.3@aar') {
         transitive = true
     }
     // Directions SDK
@@ -113,4 +113,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.2.0'
     compile project(':FloatingActionButtonPlus')
     compile project(':easeui')
+    //Vrsdk
+    compile(name:'common', ext:'aar')
+    compile(name:'commonwidget', ext:'aar')
+    compile(name:'panowidget', ext:'aar')
 }

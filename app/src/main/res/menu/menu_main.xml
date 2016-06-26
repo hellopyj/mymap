@@ -5,7 +5,7 @@
 
     <item android:id="@+id/menu_search"
         android:title="@string/menu_search"
-        android:orderInCategory="80"
+        android:orderInCategory="0"
         android:icon="@drawable/ic_search_white_24px"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView" />

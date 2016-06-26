@@ -10,16 +10,20 @@ import android.content.IntentFilter;
 import android.os.Environment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.bluelinelabs.logansquare.LoganSquare;
@@ -58,6 +62,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
@@ -65,8 +70,13 @@ public class MainActivity extends BaseActivity {
     android.app.FragmentManager fragmentManager;
     ContactListFragment contactListFragment;
     MapFragment mapFragment;
+//    public Button buttonok;
+   // LinkedList<MenuItem> menuItems;
+    public MenuItem miserach;
+    public SubMenu mysumenu;
     CommountionFragment commountionFragment;
     Fragment[] contentFragment;
+    public SearchView searchView;
     public FloatingActionButtonPlus fbPlus;
     int currentFragmentIndex;
     private android.app.AlertDialog.Builder conflictBuilder;
@@ -164,12 +174,33 @@ public class MainActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+       // searchView= (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.menu_search));
+        //buttonok= (Button) MenuItemCompat.getActionView(menu.findItem(R.id.menu_ok));
+       // buttonok.setVisibility(View.GONE);
+        //searchView.setVisibility(View.INVISIBLE);
+        miserach=menu.findItem(R.id.menu_search);
+       // mymenu=menu;
+        //menuItems.add( menu.findItem(R.id.menu_ok));
+        //MenuItem buttondone = menu.findItem(R.id.menu_ok);
+        //buttondone.seto
+        //buttondone.setVisible(false);
+       // SubMenu fontMenu=menu.addSubMenu("字体大小");
+        //menu.add("sss");
+        //fontMenu.setHeaderIcon(R.drawable.camera_switch_normal);
+        mysumenu= menu.addSubMenu("更多");
+        mysumenu.add(1,1,100,"关于").setIcon(R.drawable.ic_help_black_24dp);
+       // mysumenu.add(1,1,100,"消息").setIcon(R.drawable.compass);
+        MenuItem item =  mysumenu.getItem();
+        item.setIcon(R.drawable.ic_more_vert_black_24dp);
+        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+        return super.onCreateOptionsMenu(menu);
+       // return true;
     }
     //设置默认Fragment
     void inItFragment()
     {
         FragmentTransaction transaction=fragmentManager.beginTransaction();
+        //menuItems=new LinkedList<>();
         contactListFragment=new ContactListFragment();
         mapFragment=new MapFragment();
         commountionFragment=new CommountionFragment();
@@ -208,6 +239,8 @@ public class MainActivity extends BaseActivity {
             else {
                // fbPlus.setVisibility(View.GONE);
                 fbPlus.hideFab();
+                //mysumenu.getItem();
+                //mysumenu.removeGroup(2);
                // Log.v("sss",i+"");
             }
     }
@@ -458,6 +491,7 @@ public class MainActivity extends BaseActivity {
         @Override
         public void onContactRefused(String username) {}
     }
+
 
 //    @Override
 //    protected void onActivityResult(int requestCode, int resultCode, Intent data) {

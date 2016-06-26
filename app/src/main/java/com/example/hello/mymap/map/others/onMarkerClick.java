@@ -13,4 +13,7 @@ public abstract class onMarkerClick {
     public abstract void markPic(MyBaseMarker  marker);
     public abstract  void markAr(MyBaseMarker marker);
     public abstract  void markVoice(MyBaseMarker marker);
+    public abstract  void markLineStart(MyBaseMarker marker);
+    public abstract  void markLineEnd(MyBaseMarker marker);
+    public abstract  void markGonStrat(MyBaseMarker marker,int i);
 }

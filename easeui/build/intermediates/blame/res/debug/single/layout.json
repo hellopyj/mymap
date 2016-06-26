@@ -1,19 +1,19 @@
 [
     {
-        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar.xml",
-        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\layout\\ease_search_bar.xml"
-    },
-    {
-        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\layout\\ease_activity_show_big_image.xml"
     },
     {
         "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_big_expression.xml",
         "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\layout\\ease_row_big_expression.xml"
     },
     {
-        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_activity_show_big_image.xml",
-        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\layout\\ease_activity_show_big_image.xml"
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_search_bar.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\layout\\ease_search_bar.xml"
     },
     {
         "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_row_sent_location.xml",

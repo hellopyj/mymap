@@ -62,7 +62,7 @@
         <activity android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity" />
         <activity android:name="com.hyphenate.easeui.ui.EaseShowVideoActivity" />
         <activity android:name=".map.acyivity.PLVideoViewActivity" />
-        <activity android:name=".map.acyivity.PlaceInfo"/>
+        <activity android:name=".map.acyivity.PlaceInfo" />
 
         <!-- 设置环信应用的appkey -->
         <meta-data
@@ -116,7 +116,11 @@
         <activity android:name=".activity.TestActivity" />
         <activity android:name=".map.acyivity.BigPicActivity" />
         <activity android:name=".ar.ArCreatActivity" />
-        <activity android:name=".map.acyivity.PlaceInfo"></activity>
+        <activity android:name=".map.acyivity.PlaceInfo" />
+        <activity android:name=".map.acyivity.Childinfo" />
+        <activity android:name=".map.acyivity.VrActivity"/>
+        <activity android:name=".map.acyivity.VrActivity"/>
+        <service android:name="com.mapbox.mapboxsdk.telemetry.TelemetryService"/>
     </application>
 
 </manifest>

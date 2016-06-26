@@ -57,6 +57,12 @@
                 android:textSize="18dp"
                 android:layout_gravity="center"
                 />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vr"
+                android:onClick="setvr"
+                />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
     <android.support.v4.widget.NestedScrollView
@@ -266,6 +272,7 @@
         android:visibility="gone"
         >
         <Button
+            android:id="@+id/bt_enter"
             android:layout_below="@id/ll_account"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"

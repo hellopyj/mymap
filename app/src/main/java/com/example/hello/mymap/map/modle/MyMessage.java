@@ -4,6 +4,7 @@ import com.bluelinelabs.logansquare.annotation.JsonField;
 import com.bluelinelabs.logansquare.annotation.JsonObject;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Lovepyj on 2016/5/31.

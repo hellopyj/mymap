@@ -64,4 +64,8 @@ public class Geocoder {
             }
         }).start();
     }
+    //请求完成接口类
+    public abstract class GeocoderComplete {
+        public abstract void complete(ReturnJs returnJs);
+    }
 }

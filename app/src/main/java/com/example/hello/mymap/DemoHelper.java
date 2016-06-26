@@ -155,7 +155,7 @@ public class DemoHelper {
 		    appContext = context;
 
 		    //设为调试模式，打成正式包时，最好设为false，以免消耗额外的资源
-		    EMClient.getInstance().setDebugMode(true);
+		    EMClient.getInstance().setDebugMode(false);
 		    //get easeui instance
 		    easeUI = EaseUI.getInstance();
 		    //调用easeui的api设置providers

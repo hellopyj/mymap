@@ -15,7 +15,7 @@ public class Config {
     //mapbox样式地址
     public static String MAP_STYLE="mapbox://styles/hellopyj/cinemlqr4004cfokvpecakeq7";
    //路线规划
-    public static String MAP_ROTE="http://www.yournavigation.org/api/1.0/gosmore.php?format=geojson&flat=%s&flon=%s&tlat=%s&tlon=%s&v=foot&fast=1&layer=mapnik&instructions=1";
+    public static String MAP_ROTE="http://valhalla.mapzen.com/route?json={\"locations\":[{\"lat\":%s,\"lon\":%s},{\"lat\":%s,\"lon\":%s}],\"costing\":\"auto\",\"costing_options\":{\"auto\":{\"country_crossing_penalty\":2000.0}},\"directions_options\":{\"units\":\"miles\"}}&id=my_work_route&api_key=valhalla-7hHJLgR";
 
     public static final String VERSION = "&v="+ MyApplication.getInstance().getVersionName();
     //http连接
@@ -28,8 +28,13 @@ public class Config {
     //添加marker
     public  static final String ADD_MARKER_URL=BASE_URL+"upmarker.php";//+"?type=%s&latitude=%s&longitude=%s&content=%s";
     //地点解析
-    public static String PLACE_INFO=BASE_URL+"placeinfo.php"+"?latitude=%s"+"&longitude=%s"+VERSION;
-
+    public static final String PLACE_INFO=BASE_URL+"placeinfo.php"+"?latitude=%s"+"&longitude=%s"+VERSION;
+    //获得路线
+    public static final String POLYLINE_INFO=BASE_URL+"getpolyline.php"+"?frlatitude=%s&frlongitude=%s&tolatitude=%s&tolongitude=%s";
+    //获得child信息
+    public static final String GETCHILD=BASE_URL+"getchild.php"+"?placeid=%s";
+    //获得网站
+    public static final String GETCHILD_HTML=BASE_URL+"placeshtml/%s";
 
     ///////////////////////////////////////////////////////////////////
 
