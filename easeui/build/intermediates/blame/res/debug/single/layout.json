@@ -328,12 +328,12 @@
         "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_primary_menu.xml",
-        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\layout\\ease_widget_chat_primary_menu.xml"
-    },
-    {
         "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
         "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_primary_menu.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\layout\\ease_widget_chat_primary_menu.xml"
     },
     {
         "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\debug\\layout\\ease_widget_chat_input_menu.xml",

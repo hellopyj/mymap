@@ -1,6 +1,7 @@
 package com.example.hello.mymap;
 
 import android.app.ActivityManager;
+//import android.app.Application;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -13,12 +14,15 @@ import android.util.Log;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
+import com.example.hello.mymap.map.widget.MapInptBar;
 import com.example.hello.mymap.utils.Config;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.mapbox.mapboxsdk.MapboxAccountManager;
 import com.qiniu.android.storage.UploadManager;
 
 import java.util.Iterator;
 import java.util.List;
+
 import okhttp3.OkHttpClient;
 
 
@@ -41,22 +45,11 @@ public class MyApplication extends Application {
     public static OkHttpClient httpClient=new OkHttpClient();
     @Override
     public void onCreate() {
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-                .detectDiskReads()
-                .detectDiskWrites()
-                .detectNetwork()   // or .detectAll() for all detectable problems
-                .penaltyLog()
-                .build());
-        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-                .detectLeakedSqlLiteObjects()
-                .detectLeakedClosableObjects()
-                .penaltyLog()
-                .penaltyDeath()
-                .build());
-        MultiDex.install(this);
         super.onCreate();
+        MultiDex.install(this);
         instance=this;
         applicationContext=this;
+        MapboxAccountManager.start(this,getmapToken());
         //百度地图初始化
         //SDKInitializer.initialize(this);
        // mLocationClient = new LocationClient(this);
@@ -136,6 +129,7 @@ public class MyApplication extends Application {
 	        return 0;
 	    }  */
     }
+    //获得map的token
     public String getmapToken()
     {
         return getResources().getString(R.string.accessToken);

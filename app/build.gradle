@@ -87,7 +87,7 @@ apply plugin: 'com.neenbedankt.android-apt'
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile('com.mapbox.mapboxsdk:mapbox-android-sdk:4.1.0-beta.3@aar') {
+    compile('com.mapbox.mapboxsdk:mapbox-android-sdk:4.1.0@aar') {
         transitive = true
     }
     // Directions SDK
@@ -117,4 +117,9 @@ dependencies {
     compile(name:'common', ext:'aar')
     compile(name:'commonwidget', ext:'aar')
     compile(name:'panowidget', ext:'aar')
+    compile(name:'xwalk_core_library', ext:'aar')
+    compile 'com.kyleduo.switchbutton:library:1.4.1'
+    //compile project(path: ':osmeditor4android-master')
+    //compile(name:'osmeditor4android-master-debug', ext:'aar')
+
 }

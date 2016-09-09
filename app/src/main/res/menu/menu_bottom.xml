@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<item android:title="放大"
+    android:id="@+id/it_zoomin"
+        android:orderInCategory="0"
+        android:icon="@drawable/ic_zoom_in_black_24dp"
+        app:showAsAction="always" />
+    <item android:title="缩小"
+        android:id="@+id/it_zoomout"
+        android:orderInCategory="0"
+        android:icon="@drawable/ic_zoom_out_black_24dp"
+        app:showAsAction="always" />
+
+    <item android:title="点"
+        android:id="@+id/it_addpoint"
+        android:orderInCategory="0"
+        android:icon="@drawable/ic_add_location_white_36px"
+        app:showAsAction="always" />
+
+    <item android:title="线"
+        android:id="@+id/it_addline"
+        android:orderInCategory="0"
+        android:icon="@drawable/ic_timeline_white_36px"
+        app:showAsAction="always" />
+
+    <item android:title="面"
+        android:id="@+id/it_addmian"
+        android:orderInCategory="0"
+        android:icon="@drawable/ic_layers_white_36px"
+        app:showAsAction="always" />
+    <item android:title="显示"
+        android:id="@+id/it_show"
+        android:orderInCategory="0"
+        android:icon="@drawable/ic_visibility_black_24dp"
+        app:showAsAction="always" />
+    <item android:title="隐藏"
+        android:id="@+id/it_hide"
+        android:orderInCategory="0"
+        android:icon="@drawable/ic_visibility_off_black_24dp"
+        app:showAsAction="always" />
+
+</menu>

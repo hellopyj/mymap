@@ -448,12 +448,12 @@
         "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
-        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
         "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\ee_57.png",
         "source": "E:\\SRC\\Android\\mymap\\easeui\\res\\drawable-xhdpi\\ee_57.png"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
         "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\ease_new_friends_icon.png",

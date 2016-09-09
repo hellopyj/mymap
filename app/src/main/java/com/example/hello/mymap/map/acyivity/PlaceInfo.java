@@ -1,5 +1,6 @@
 package com.example.hello.mymap.map.acyivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -19,9 +20,15 @@ import com.example.hello.mymap.Constant;
 import com.example.hello.mymap.MyApplication;
 import com.example.hello.mymap.R;
 import com.example.hello.mymap.activity.ChatActivity;
+import com.example.hello.mymap.map.others.MarkerVoiceClick;
 import com.example.hello.mymap.model.ReturnJs;
+import com.example.hello.mymap.tools.FileDownloadCallback;
+import com.example.hello.mymap.tools.FileDownloadTask;
+import com.example.hello.mymap.tools.MyTools;
 import com.example.hello.mymap.utils.Config;
+import com.hyphenate.util.PathUtil;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.HashMap;
 
@@ -37,7 +44,9 @@ public class PlaceInfo extends AppCompatActivity {
     TextView tv_tip;
     TextView tv_point;
     LinearLayout ll_bt;
+    Button btvr;
     Button enter;
+    private ProgressDialog pd;
     FloatingActionButton floatingActionButton;
 
     @Override
@@ -46,6 +55,8 @@ public class PlaceInfo extends AppCompatActivity {
         setContentView(R.layout.activity_place_info);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        pd=new ProgressDialog(this);
+        pd.setCanceledOnTouchOutside(false);
         tv_title= (TextView) findViewById(R.id.tv_title);
         tv_name= (TextView) findViewById(R.id.tv_name);
         tv_admin= (TextView) findViewById(R.id.tv_admin);
@@ -56,6 +67,7 @@ public class PlaceInfo extends AppCompatActivity {
         ll_bt= (LinearLayout) findViewById(R.id.ll_bt);
         enter= (Button) findViewById(R.id.bt_enter);
         floatingActionButton= (FloatingActionButton) findViewById(R.id.fa_send);
+        btvr= (Button) findViewById(R.id.bt_vr);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,7 +96,9 @@ public class PlaceInfo extends AppCompatActivity {
         String placename=data.get("place_name");
         final String placeid=data.get("place_id");
         boolean haschild;
+        boolean hasvr;
         haschild=("0".equals(data.get("haschild"))||data.get("haschild")==null)?false:true;
+        final int vrtype=Integer.parseInt(data.get("hasvr"));
         if("".equals(placename)||placename==null) {
             placename=osm.split(",")[0];
         }
@@ -106,14 +120,25 @@ public class PlaceInfo extends AppCompatActivity {
         tv_tip.setText(tip);
         tv_name.setText(placename);
         tv_point.setText(data.get("lat")+","+data.get("lon"));
+        final String name=placename;
         if(haschild)
         {
-            final String name=placename;
+
             ll_bt.setVisibility(View.VISIBLE);
             enter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     getchild(placeid,name);
+                }
+            });
+        }
+        if (vrtype>0)
+        {
+            btvr.setVisibility(View.VISIBLE);
+            btvr.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    setvr(placeid,name,vrtype);
                 }
             });
         }
@@ -146,13 +171,20 @@ public class PlaceInfo extends AppCompatActivity {
                     Response response = MyApplication.getInstance().httpClient.newCall(request).execute();
                     String json = response.body().string();
                     ReturnJs returnJs= LoganSquare.parse(json,ReturnJs.class);
-                     Log.v("sss",json);
+                     //Log.v("sss",json);
                     if(returnJs.code==1)
                     {
                         if("1".equals(returnJs.content.get("type")))
                         {
                             Intent intent=new Intent(PlaceInfo.this, Childinfo.class);
                             intent.putExtra("url",String.format(Config.GETCHILD_HTML,placeid));
+                            intent.putExtra("title",placename);
+                            startActivity(intent);
+                        }
+                        if("2".equals(returnJs.content.get("type")))
+                        {
+                            Intent intent=new Intent(PlaceInfo.this, Childinfo.class);
+                            intent.putExtra("url",returnJs.content.get("extra"));
                             intent.putExtra("title",placename);
                             startActivity(intent);
                         }
@@ -164,7 +196,37 @@ public class PlaceInfo extends AppCompatActivity {
             }
         }).start();
     }
-    public void setvr(View view){
-        startActivity(new Intent(PlaceInfo.this,VrActivity.class));
+    //vr判定
+    public void setvr(final String placeid, final String placename,int type){
+ //       Log.v("sssddf",type+"");
+
+        String filename="VR_"+placeid+".jpg";
+        final String localurl= PathUtil.getInstance().getImagePath()+"/"+filename ;
+        final Intent intent=new Intent(PlaceInfo.this,VrActivity.class);
+        intent.putExtra("pathurl",localurl);
+        intent.putExtra("type",type);
+        if(new File(localurl).exists()) {
+            startActivity(intent);
+        }
+        else
+        {
+            pd.show();
+            pd.setMessage("加载中...");
+            FileDownloadCallback fileDownloadCallback=new FileDownloadCallback(){
+                @Override
+                public void onDone() {
+                    super.onDone();
+                    pd.dismiss();
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onProgress(int progress, long networkSpeed) {
+                    super.onProgress(progress, networkSpeed);
+                    pd.setMessage("加载："+progress+"%.");
+                }
+            };
+            new FileDownloadTask(Config.QINIU_BASE+filename,localurl,fileDownloadCallback,false).execute();
+        }
     }
 }

@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group >
         <item
+            android:checkable="true"
             android:id="@+id/nav_chat"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_contact_24dp"
             android:title="联系人" />
         <item
+            android:checkable="true"
             android:id="@+id/nav_communication"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_message_24dp"
             android:title="会话" />
         <item
+            android:checkable="true"
             android:id="@+id/nav_map"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_map_24dp"
             android:title="地图" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:checkable="true"
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_dongtai_24dp"
+            android:title="动态" />
     </group>
-
-    <item android:title="Communicate">
+    <item android:title="其他" >
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:checkable="true"
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_setting_24dp"
+                android:title="设置" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:checkable="true"
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_exit_24dp"
+                android:title="退出" />
         </menu>
     </item>
 

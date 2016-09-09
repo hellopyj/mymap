@@ -67,16 +67,16 @@ public class MyMarkerOption extends BaseMarkerOptions<MyBaseMarker,MyMarkerOptio
         {
 
             case MyMarkerAdapter.MARKER_TXT:
-                tmp=R.drawable.ic_sms_black_24dp;
+                tmp=R.drawable.marker_txt;
                 break;
             case MyMarkerAdapter.MARKER_PCICTURE:
-                tmp=R.drawable.ic_panorama_black_24dp;
+                tmp=R.drawable.marker_pic;
                 break;
             case MyMarkerAdapter.MARKER_AR:
-                tmp=R.drawable.ic_camera_black_24dp;
+                tmp=R.drawable.marker_ar;
                 break;
             case MyMarkerAdapter.MARKER_VIDEO:
-                tmp=R.drawable.ic_movie_filter_black_24dp;
+                tmp=R.drawable.marker_video;
                 break;
             case MyMarkerAdapter.MARKER_VOICE:
                 tmp=R.drawable.ic_settings_voice_black_24dp;

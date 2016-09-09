@@ -35,6 +35,10 @@ public class Config {
     public static final String GETCHILD=BASE_URL+"getchild.php"+"?placeid=%s";
     //获得网站
     public static final String GETCHILD_HTML=BASE_URL+"placeshtml/%s";
+    //获得vr图
+    public static final String GETVR=BASE_URL+"getvr.php"+"?placeid=%s";
+    //获得地震
+    public static final String GETEARTHQUAKE=BASE_URL+"getnatureinfo.php?type=earthquake&types=%s";
 
     ///////////////////////////////////////////////////////////////////
 

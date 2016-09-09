@@ -28,9 +28,11 @@ import com.example.hello.mymap.MyApplication;
 import com.example.hello.mymap.R;
 import com.example.hello.mymap.activity.ImageGridActivity;
 import com.example.hello.mymap.activity.MainActivity;
+import com.example.hello.mymap.activity.TestActivity;
 import com.example.hello.mymap.ar.ArActivity;
 import com.example.hello.mymap.ar.ArCreatActivity;
 import com.example.hello.mymap.map.acyivity.BigPicActivity;
+import com.example.hello.mymap.map.acyivity.MapEditActivity;
 import com.example.hello.mymap.map.acyivity.PLVideoViewActivity;
 import com.example.hello.mymap.map.adapter.MyMarkerAdapter;
 import com.example.hello.mymap.map.markers.MyBaseMarker;
@@ -82,7 +84,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -134,7 +135,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         pd.setCanceledOnTouchOutside(false);
         pd.setMessage("正在上传请稍候...");
         mMapView= (MapView) view.findViewById(R.id.mapview);
-        mMapView.setAccessToken(MyApplication.getInstance().getmapToken());
+        //mMapView.setAccessToken(MyApplication.getInstance().getmapToken());
         mMapView.onCreate(savedInstanceState);
         mMapView.getMapAsync(this);
         //setGps();
@@ -381,6 +382,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     setok();
                     pointTmpMarktype=MyMarkerAdapter.GON_STRAT;
                     currEditMod=2;
+                }
+                if(position==1&&currEditMod!=1) {
+                    startActivity(new Intent(getActivity(), MapEditActivity.class));
+                    currEditMod=2;
+                }
+                if(position==0&&currEditMod!=0) {
+                    startActivity(new Intent(getActivity(), TestActivity.class));
+                    currEditMod=0;
                 }
             }
         };
@@ -688,7 +697,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                // Log.v("size",lineTmpMark.size()+"");
                 if(lineTmpMark.size()==3)
                 {
+                    isMenuShow=true;
                     shownok();
+
                 }
                 else {
                     if (lineTmpMark.size()<3)
@@ -911,9 +922,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             }
             MyBaseMarker tmp= (MyBaseMarker) mMapBoxMap.addMarker(new MyMarkerOption().position(latLngs.get(0)));
             tmp.brother=new ArrayList<>();
+            int color=Color.parseColor("#ffffff");
             tmp.brother.add(mMapBoxMap.addPolygon(new PolygonOptions()
                     .addAll(latLngs)
-                    .fillColor(Color.parseColor("#3bb2d0"))));
+                    .fillColor(color).strokeColor(color)));
         }
     }
     //移除listmark
@@ -939,6 +951,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     removeListMark(lineTmpMark);
                     unshownok();
                     canTouch=true;
+                    isMenuShow=false;
                     return false;
                 }
             });
@@ -947,6 +960,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 public boolean onMenuItemClick(MenuItem menuItem) {
                     removeListMark(lineTmpMark);
                     unshownok();
+                    isMenuShow=false;
                     return false;
                 }
             });

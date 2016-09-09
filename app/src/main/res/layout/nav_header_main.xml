@@ -2,32 +2,65 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="160dp"
-    android:background="@drawable/side_nav_bar"
-    android:gravity="bottom"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main_c"
+    android:paddingTop="40dp"
+    android:paddingLeft="20dp"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/sym_def_app_icon" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:text="Android Studio"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:orientation="horizontal"
+        >
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/rcv_article_photo"
+            fresco:placeholderImage="@drawable/headlogo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            fresco:actualImageScaleType="centerInside"
+            fresco:roundAsCircle="true"
+            fresco:roundingBorderColor="#ffffff"
+            fresco:roundingBorderWidth="2dp" />
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:text="814888649"
+            />
 
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="35dp"
+    android:paddingTop="10dp"
+    >
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="android.studio@android.com" />
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:text="状态:  "
+        />
+    <TextView
+        android:id="@+id/tv_zhuangtai"
+        android:maxEms="10"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:text="看，那一条狗"
+        />
+
+</LinearLayout>
+
 
 </LinearLayout>

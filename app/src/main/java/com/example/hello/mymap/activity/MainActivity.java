@@ -35,6 +35,8 @@ import com.example.hello.mymap.fragment.ChatFragment;
 import com.example.hello.mymap.fragment.CommountionFragment;
 import com.example.hello.mymap.fragment.ContactListFragment;
 import com.example.hello.mymap.fragment.MapFragment;
+import com.example.hello.mymap.fragment.SettingsFragment;
+import com.example.hello.mymap.map.acyivity.EarthQuakeActivity;
 import com.example.hello.mymap.map.markers.MyMarkerOption;
 import com.example.hello.mymap.map.modle.MyMessage;
 import com.example.hello.mymap.tools.FileDownloadCallback;
@@ -75,6 +77,7 @@ public class MainActivity extends BaseActivity {
     public MenuItem miserach;
     public SubMenu mysumenu;
     CommountionFragment commountionFragment;
+    SettingsFragment settingsFragment;
     Fragment[] contentFragment;
     public SearchView searchView;
     public FloatingActionButtonPlus fbPlus;
@@ -145,7 +148,10 @@ public class MainActivity extends BaseActivity {
                 }else if (id == R.id.nav_map) {
                    index=2;
 
-                }  else if (id == R.id.nav_manage) {
+                }  else if (id == R.id.nav_news) {
+                    startActivity(new Intent(MainActivity.this, EarthQuakeActivity.class));
+                    return true;
+
 //                    new FileUploadThread("/storage/emulated/0/1.png",
 //                            null,    new UpCompletionHandler() {
 //                        @Override
@@ -154,10 +160,10 @@ public class MainActivity extends BaseActivity {
 //                            Log.v("ok","ok");
 //                        }}).start();
 
-                } else if (id == R.id.nav_share) {
-
-                } else if (id == R.id.nav_send) {
-
+                } else if (id == R.id.nav_setting) {
+                    index=3;
+                } else if (id == R.id.nav_exit) {
+                    finish();
                 }
                 changeFragment(index);
                 changeFb();
@@ -188,7 +194,7 @@ public class MainActivity extends BaseActivity {
         //menu.add("sss");
         //fontMenu.setHeaderIcon(R.drawable.camera_switch_normal);
         mysumenu= menu.addSubMenu("更多");
-        mysumenu.add(1,1,100,"关于").setIcon(R.drawable.ic_help_black_24dp);
+        //mysumenu.add(1,1,100,"关于").setIcon(R.drawable.ic_help_black_24dp);
        // mysumenu.add(1,1,100,"消息").setIcon(R.drawable.compass);
         MenuItem item =  mysumenu.getItem();
         item.setIcon(R.drawable.ic_more_vert_black_24dp);
@@ -204,10 +210,11 @@ public class MainActivity extends BaseActivity {
         contactListFragment=new ContactListFragment();
         mapFragment=new MapFragment();
         commountionFragment=new CommountionFragment();
-        contentFragment=new Fragment[]{contactListFragment,commountionFragment,mapFragment};
+        settingsFragment=new SettingsFragment();
+        contentFragment=new Fragment[]{contactListFragment,commountionFragment,mapFragment,settingsFragment};
         currentFragmentIndex=0;
-        transaction.add(R.id.fr_content,contactListFragment).add(R.id.fr_content,mapFragment).add(R.id.fr_content,commountionFragment)
-                .hide(mapFragment).hide(commountionFragment).show(contactListFragment).commit();
+        transaction.add(R.id.fr_content,contactListFragment).add(R.id.fr_content,mapFragment).add(R.id.fr_content,commountionFragment).add(R.id.fr_content,settingsFragment)
+                .hide(settingsFragment).hide(mapFragment).hide(commountionFragment).show(contactListFragment).commit();
         changeFb();
 
     }
@@ -490,6 +497,12 @@ public class MainActivity extends BaseActivity {
         public void onContactAgreed(String username) {}
         @Override
         public void onContactRefused(String username) {}
+    }
+    /**
+     * 检查当前用户是否被删除
+     */
+    public boolean getCurrentAccountRemoved() {
+        return isCurrentAccountRemoved;
     }
 
 

@@ -48,21 +48,30 @@
             app:title="TA的资料"
             >
         </android.support.v7.widget.Toolbar>
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="喵呜的天坛"
-                android:textColor="#ffffff"
-                android:textSize="18dp"
-                android:layout_gravity="center"
-                />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vr"
-                android:onClick="setvr"
-                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="喵呜的天坛"
+                    android:textColor="#ffffff"
+                    android:textSize="18dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    />
+                <Button
+                    android:id="@+id/bt_vr"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_vr_white_24dp"
+                    android:visibility="gone"
+                    />
+            </RelativeLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
     <android.support.v4.widget.NestedScrollView
@@ -299,6 +308,6 @@
         app:layout_anchor="@id/main.appbar"
         app:layout_anchorGravity="bottom|right|end"
         app:backgroundTint="#ffffff"
-        app:rippleColor="#ffffff"
+        app:rippleColor="#eeeeee"
         />
 </android.support.design.widget.CoordinatorLayout>

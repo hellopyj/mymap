@@ -44,12 +44,12 @@
         "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\anim\\push_top_out2.xml"
     },
     {
-        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\push_bottom_in.xml",
-        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\anim\\push_bottom_in.xml"
-    },
-    {
         "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
         "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\push_bottom_in.xml",
+        "source": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\bundles\\debug\\res\\anim\\push_bottom_in.xml"
     },
     {
         "merged": "E:\\SRC\\Android\\mymap\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_top.xml",
